@@ -1,0 +1,6 @@
+.vscode/
+Thumbs.db
+.DS_Store
+~$*
+secrets/
+__pycache__/

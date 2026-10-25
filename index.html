@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prof. Syed Mohammed Basheeruddin Asdaq</title>
+<meta name="description" content="Professor, College of Pharmacy, and Director of the Research Centre, AlMaarefa University, Riyadh. Research themes, publications and academic profile.">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <span class="brand-mark">SA</span>
+      <span class="brand-text">Prof. S. M. B. Asdaq</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#analytics">Analytics</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="icon-btn" id="theme-btn" type="button" aria-label="Switch light or dark theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">AlMaarefa University · Riyadh</div>
+          <h1 id="hero-name"><span class="honorific">Professor</span>Syed Mohammed Basheeruddin Asdaq</h1>
+          <div class="hero-roles" id="hero-roles">
+            <div><strong>Professor, College of Pharmacy</strong>, AlMaarefa University, Riyadh, Saudi Arabia</div>
+            <div><strong>Director, Research Centre</strong>, Deanship of Scientific Research</div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#research">Explore research themes</a>
+            <a class="btn btn-ghost" href="#publications">All publications</a>
+          </div>
+        </div>
+        <button class="portrait reveal" id="portrait" type="button" aria-label="View photo">
+          <span class="monogram">SA</span>
+        </button>
+      </div>
+      <div class="metric-strip" id="metric-strip" aria-label="Research metrics"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="band" id="about">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">About</div><h2>Executive profile</h2></div>
+      <div class="about-grid">
+        <div class="about-text" id="about-text"><p class="loading">Loading profile…</p></div>
+        <dl class="facts" id="facts"></dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="band alt" id="education">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Education</div><h2>Academic Qualifications</h2></div>
+      <ol class="timeline" id="edu-list"></ol>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="band" id="experience">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Experience</div><h2>Current leadership &amp; academic appointments</h2></div>
+      <div class="current" id="current-roles"></div>
+      <div class="other-roles" id="other-roles"></div>
+      <h3 class="sub-h">Professional Experience</h3>
+      <div id="exp-groups"></div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="band alt" id="leadership">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Leadership</div><h2>Quality assurance, NCAAA accreditation &amp; institutional leadership</h2></div>
+      <ul class="qa-list" id="qa-list"></ul>
+      <div class="stack" style="margin-top:28px">
+        <div class="panel"><h3>Editorial &amp; scholarly leadership</h3><ul class="cards" id="editorial"></ul></div>
+        <div class="panel"><h3>Research leadership</h3><ul class="cards" id="res-lead"></ul></div>
+        <div class="panel"><h3>Teaching &amp; research supervision</h3><p class="teaching-text" id="teaching"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="band" id="research">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Research</div><h2>Research themes &amp; expertise</h2></div>
+      <ul class="expertise" id="expertise"></ul>
+      <h3 class="sub-h">Publications by theme</h3>
+      <p style="color:var(--ink-soft);margin-bottom:20px">Every publication is grouped under one theme. Open a theme to see its papers with DOI links.</p>
+      <div class="tiles" id="tiles"><p class="loading">Loading themes…</p></div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="band alt" id="publications">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Publications</div><h2>Complete publication list</h2></div>
+      <div class="pub-tools">
+        <label class="field" for="pub-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="pub-search" type="search" placeholder="Search title, journal or co-author" autocomplete="off">
+        </label>
+        <select id="pub-theme" aria-label="Filter by theme"><option value="">All themes</option></select>
+        <select id="pub-type" aria-label="Filter by type"><option value="">All types</option></select>
+        <select id="pub-year" aria-label="Filter by year"><option value="">All years</option></select>
+        <select id="pub-sort" aria-label="Sort"><option value="year">Newest first</option><option value="cites">Most cited</option></select>
+      </div>
+      <p class="pub-summary" id="pub-summary"></p>
+      <ul class="pubs" id="pub-list"></ul>
+      <div class="more-wrap"><button class="btn btn-ghost" id="pub-more" type="button" hidden>Show more</button></div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section class="band" id="activities">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Professional activities</div><h2>Recognition, funding and innovation</h2></div>
+      <div class="stack">
+        <div class="panel"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg>Honours &amp; service</h3><ul class="cards" id="honours"></ul></div>
+        <div class="panel"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v12H3z"/><path d="M8 7V5h8v2M3 12h18"/></svg>Research funding</h3><ul class="cards three" id="grants"></ul></div>
+        <div class="panel"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3Z"/></svg>Patents &amp; design registrations</h3><div class="patents" id="patents"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANALYTICS -->
+  <section class="band alt" id="analytics">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Analytics</div><h2>Research impact</h2></div>
+      <div class="metric-sources" id="metric-sources"></div>
+      <div class="charts">
+        <div class="chart-card wide" id="scholar-year-card" hidden><h3>Google Scholar citations per year</h3><p class="note" id="scholar-year-note"></p><div class="chart-box"><canvas id="chart-scholar-years" aria-label="Google Scholar citations per year chart"></canvas></div></div>
+        <div class="chart-card wide"><h3>Publications per year</h3><div class="chart-box"><canvas id="chart-years" aria-label="Publications per year chart"></canvas></div></div>
+        <div class="chart-card"><h3>Papers by theme</h3><div class="chart-box tall"><canvas id="chart-themes" aria-label="Papers by theme chart"></canvas></div></div>
+        <div class="chart-card"><h3>Citations by theme</h3><div class="chart-box tall"><canvas id="chart-cites" aria-label="Citations by theme chart"></canvas></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="band" id="contact">
+    <div class="wrap">
+      <div class="section-head"><div class="eyebrow">Contact</div><h2>Get in touch</h2></div>
+      <div class="contact-grid">
+        <div>
+          <div class="emails" id="emails"></div>
+          <p style="margin-top:12px;color:var(--ink-soft)" id="location"></p>
+          <div class="langs" id="langs"></div>
+          <div id="refs"></div>
+        </div>
+        <div class="links" id="links"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© <span id="year"></span> Prof. Syed Mohammed Basheeruddin Asdaq</span>
+    <span id="data-note">Data: Google Scholar, OpenAlex, Crossref and CV.</span>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Details"><div class="lb-shell" id="lb-shell"></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/vendor/papaparse.min.js"></script>
+<script src="js/vendor/chart.umd.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

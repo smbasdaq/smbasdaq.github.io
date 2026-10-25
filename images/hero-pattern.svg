@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" fill="none" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <!-- chemistry: benzene ring with substituent -->
+  <g transform="translate(40 40)"><polygon points="26,0 52,15 52,45 26,60 0,45 0,15"/><circle cx="26" cy="30" r="14"/><path d="M52 15 L76 2 L98 14"/><circle cx="98" cy="14" r="3.5" fill="#000"/></g>
+  <!-- biology: DNA helix -->
+  <g transform="translate(190 20)"><path d="M0 0 C 30 20, 30 40, 0 60 C -30 80, -30 100, 0 120"/><path d="M0 0 C -30 20, -30 40, 0 60 C 30 80, 30 100, 0 120"/><path d="M-18 15 H18 M-22 30 H22 M-18 45 H18 M-18 75 H18 M-22 90 H22 M-18 105 H18"/></g>
+  <!-- medical: stethoscope -->
+  <g transform="translate(300 40)"><path d="M0 0 V28 a22 22 0 0 0 44 0 V0"/><path d="M22 50 V70 a20 20 0 0 0 40 0 V60"/><circle cx="62" cy="54" r="7"/><path d="M-4 0 h8 M40 0 h8"/></g>
+  <!-- tech: circuit traces with nodes -->
+  <g transform="translate(450 30)"><path d="M0 20 H40 L60 40 H110"/><path d="M0 60 H30 L50 80 H90 L110 100"/><path d="M60 0 V20"/><circle cx="0" cy="20" r="4"/><circle cx="110" cy="40" r="4"/><circle cx="0" cy="60" r="4"/><circle cx="110" cy="100" r="4"/><circle cx="60" cy="0" r="4"/></g>
+  <!-- medical: ECG heartbeat -->
+  <g transform="translate(20 175)"><path d="M0 30 H40 L52 8 L66 52 L78 18 L86 30 H140"/></g>
+  <!-- pharmacy: capsule + tablet -->
+  <g transform="translate(200 190) rotate(-30)"><rect x="0" y="0" width="64" height="26" rx="13"/><path d="M32 0 V26"/></g>
+  <g transform="translate(290 175)"><circle cx="18" cy="18" r="18"/><path d="M6 18 H30"/></g>
+  <!-- biology: neuron -->
+  <g transform="translate(380 165)"><circle cx="30" cy="30" r="11"/><path d="M30 19 V0 M19 28 L0 18 M41 26 L60 14 M24 40 L12 62 M36 40 L44 58 L70 66 L96 60"/><path d="M0 18 l-6 -6 M0 18 l-8 2 M30 0 l-5 -5 M30 0 l5 -5 M60 14 l6 -6"/></g>
+  <!-- chemistry: Erlenmeyer flask -->
+  <g transform="translate(540 160)"><path d="M10 0 H34 M14 0 V30 L-10 76 a6 6 0 0 0 5 9 H54 a6 6 0 0 0 5 -9 L30 30 V0"/><path d="M-2 62 H46"/></g>
+  <!-- tech: chip -->
+  <g transform="translate(40 300)"><rect x="12" y="12" width="44" height="44" rx="4"/><rect x="24" y="24" width="20" height="20"/><path d="M22 0 V12 M34 0 V12 M46 0 V12 M22 56 V68 M34 56 V68 M46 56 V68 M0 22 H12 M0 34 H12 M0 46 H12 M56 22 H68 M56 34 H68 M56 46 H68"/></g>
+  <!-- medical: cross -->
+  <g transform="translate(160 320)"><path d="M14 0 H30 V14 H44 V30 H30 V44 H14 V30 H0 V14 H14 Z"/></g>
+  <!-- biology: cell with nucleus -->
+  <g transform="translate(250 300)"><ellipse cx="44" cy="34" rx="44" ry="32"/><circle cx="50" cy="32" r="12"/><circle cx="22" cy="22" r="3"/><circle cx="70" cy="50" r="3"/><circle cx="24" cy="48" r="2"/></g>
+  <!-- chemistry: molecule network -->
+  <g transform="translate(380 300)"><path d="M0 40 L30 20 L60 36 L90 14 M30 20 L36 -6 M60 36 L58 70 L90 84"/><circle cx="0" cy="40" r="5" fill="#000"/><circle cx="30" cy="20" r="4"/><circle cx="60" cy="36" r="5" fill="#000"/><circle cx="90" cy="14" r="4"/><circle cx="36" cy="-6" r="3.5"/><circle cx="58" cy="70" r="4"/><circle cx="90" cy="84" r="5" fill="#000"/></g>
+  <!-- pharmacy: mortar and pestle -->
+  <g transform="translate(530 310)"><path d="M0 24 H70 a35 32 0 0 1 -70 0 Z"/><path d="M20 58 H50"/><path d="M46 22 L72 -10"/><circle cx="74" cy="-12" r="5"/></g>
+  <!-- tech: binary -->
+  <g transform="translate(150 430)" stroke="none" fill="#000" font-family="monospace" font-size="13"><text>0110 1001</text></g>
+  <!-- medical: syringe -->
+  <g transform="translate(300 420) rotate(-20)"><rect x="0" y="0" width="70" height="16" rx="2"/><path d="M70 8 H90 M-14 8 H0 M-14 -2 V18 M14 0 V8 M28 0 V8 M42 0 V8"/></g>
+  <!-- tech: neural net dots -->
+  <g transform="translate(470 420)"><circle cx="0" cy="0" r="4"/><circle cx="0" cy="30" r="4"/><circle cx="40" cy="-10" r="4"/><circle cx="40" cy="15" r="4"/><circle cx="40" cy="40" r="4"/><circle cx="80" cy="15" r="4"/><path d="M4 0 L36 -10 M4 0 L36 15 M4 0 L36 40 M4 30 L36 -10 M4 30 L36 15 M4 30 L36 40 M44 -10 L76 15 M44 15 L76 15 M44 40 L76 15"/></g>
+</svg>
