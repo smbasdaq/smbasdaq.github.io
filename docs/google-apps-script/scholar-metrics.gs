@@ -20,6 +20,8 @@
  *        SERPAPI_KEY            = your SerpApi private API key
  *        PUBLICATIONS_SHEET_ID  = the ID of the Publications Google Sheet
  *                                 (the long code in its address bar between /d/ and /edit)
+ *        OPENALEX_API_KEY       = optional, free from https://openalex.org/settings/api
+ *                                 (makes the new-paper check reliable on Google's shared servers)
  *   b. Select  forceUpdate  in the toolbar and click Run once. Approve the permissions.
  *      (This is the first fetch. Check the Execution log for the summary.)
  *   c. Triggers (clock icon) → Add trigger → function: refreshIfStale → Time-driven → Day timer.
@@ -205,11 +207,20 @@ function themeTabs_(pubs) {
 }
 
 function fetchOpenAlexNew_(authorId, since) {
+  // Optional free key (openalex.org/settings/api) avoids the shared "too many requests" limit on Google's servers.
+  const oaKey = PropertiesService.getScriptProperties().getProperty("OPENALEX_API_KEY");
   const url = "https://api.openalex.org/works?per-page=200&filter=author.id:" + authorId + ",from_publication_date:" + since +
-              "&select=doi,title,publication_year,type,primary_location,authorships,biblio,cited_by_count";
-  const res = UrlFetchApp.fetch(url, { muteHttpExceptions: true });
-  if (res.getResponseCode() !== 200) throw new Error("OpenAlex HTTP " + res.getResponseCode());
-  return JSON.parse(res.getContentText()).results || [];
+              "&select=doi,title,publication_year,type,primary_location,authorships,biblio,cited_by_count" +
+              (oaKey ? "&api_key=" + encodeURIComponent(oaKey) : "");
+  let code = 0;
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    const res = UrlFetchApp.fetch(url, { muteHttpExceptions: true });
+    code = res.getResponseCode();
+    if (code === 200) return JSON.parse(res.getContentText()).results || [];
+    if (code !== 429 && code < 500) break;
+    Utilities.sleep(attempt * 5000); // wait 5, 10, 15 s and try again
+  }
+  throw new Error("OpenAlex HTTP " + code + (code === 429 ? " (busy; add a free OPENALEX_API_KEY script property to avoid this)" : ""));
 }
 
 function addNewPapers_(pubs, openalex, scholarArticles, since, today) {
