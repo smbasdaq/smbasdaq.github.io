@@ -152,6 +152,6 @@ python -m http.server 8000
 
 ## Credits
 
-Designed and developed by **[Emad](https://github.com/YOUR-GITHUB-USERNAME)**.
+Designed and developed by **[Emaduddin Asdaq](https://github.com/EMADUDDINAsdaq)**, with AI-assisted development using Claude (Anthropic).
 
 Content © Prof. Syed Mohammed Basheeruddin Asdaq. All rights reserved. Publication metadata comes from Google Scholar, OpenAlex and Crossref.
