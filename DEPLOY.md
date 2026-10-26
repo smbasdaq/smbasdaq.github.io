@@ -48,9 +48,9 @@ Content changes never need GitHub: edit the Google Sheets.
    | `LAST_API_FETCH` | `2026-10-26` (the date of your last laptop fetch, so the next one is in 90 days) |
 4. In the editor choose **refreshIfStale** → **Run** once → approve the permissions
    (Google will say the app is unverified: Advanced → Go to project). The log should say "No API call made".
-5. **Triggers** (clock icon) → **Add Trigger** → function `refreshIfStale` → **Time-driven** → **Day timer** → Save.
+5. **Triggers** (clock icon) → **Add Trigger** → function `refreshIfStale` → **Time-driven** → **Week timer** → Monday, 9am–10am → Save.
 
-From now on, every day it checks the date and, once 90 days have passed, it:
+From now on, every week it checks the date and, once 90 days have passed, it:
 * refreshes Google Scholar citations, h-index, i10-index and citations per year (Metrics / Citations by Year tabs),
 * refreshes every paper's citation count and logs them in the Citation History tab,
 * adds new papers to a suggested theme tab, highlighted yellow "Auto-added – check theme".
