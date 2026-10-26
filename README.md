@@ -105,6 +105,13 @@ There's no build step, framework or server, so the repository is exactly what is
 
 ## Data model
 
+The live data is available read-only:
+
+| Sheet | Link |
+|---|---|
+| Publications | https://docs.google.com/spreadsheets/d/1jvSwGfHIs03pDiW7C_mBn9CwK1QIyX7HwgjBfSFLjwE/edit?usp=sharing |
+| Profile | https://docs.google.com/spreadsheets/d/1YotZBevudLM0cHgZtnudn4NSi-PBkuUPaUGrVYPxJ38/edit?usp=drive_link |
+
 **Publications Sheet**
 - `Themes`: one row per research theme (`Code`, `Tab`, `Display Name`, `Description`, `Order`).
 - One tab per theme, with the columns `Year`, `Title`, `Authors`, `Journal`, `Volume`, `Issue`, `Pages`, `DOI`, `Type`, `Citations`, `Citation Source`, `Show on Site`, and others.
