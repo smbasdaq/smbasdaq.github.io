@@ -423,7 +423,7 @@ a.pub-title:hover { color: var(--teal); text-decoration: underline; }
 .ticker { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--nav-h)); z-index: 49; display: flex; height: 36px; background: #0f5257; color: #fff; font-size: var(--step--1); overflow: hidden; }
 .ticker[hidden] { display: none; }
 .ticker-track { flex: 1; display: flex; align-items: center; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent); }
-.ticker-move { display: flex; width: max-content; animation: ticker 45s linear infinite; }
+.ticker-move { display: flex; width: max-content; animation: ticker 70s linear infinite; }
 .ticker-group { display: flex; gap: 36px; padding-right: 36px; white-space: nowrap; }
 .ticker b { color: #f8c46a; font-weight: 600; }
 .ticker:hover .ticker-move, .ticker:focus-within .ticker-move { animation-play-state: paused; }
