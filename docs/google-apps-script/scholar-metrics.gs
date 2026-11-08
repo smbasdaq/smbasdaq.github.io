@@ -3,7 +3,7 @@
  * ================================================================================
  * Paste this whole file into the PROFILE Google Sheet:  Extensions → Apps Script.
  *
- * Every 90 days it:
+ * Every 10 days it:
  *   1. Fetches Prof. Asdaq's Google Scholar profile through SerpApi (about 4 searches).
  *   2. Profile sheet  → Metrics tab: Google Scholar Citations, h-index, i10-index + "As of" date.
  *                     → Citations by Year tab: Year, Citations (chart on the website).
@@ -25,19 +25,19 @@
  *   b. Select  forceUpdate  in the toolbar and click Run once. Approve the permissions.
  *      (This is the first fetch. Check the Execution log for the summary.)
  *   c. Triggers (clock icon) → Add trigger → function: refreshIfStale → Time-driven → Day timer.
- *      It checks the date daily and calls SerpApi only when 90 days have passed.
+ *      It checks the date daily and calls SerpApi only when 10+ days have passed.
  *
  * The key stays inside Google; it is never in the website files.
  */
 
-const REFRESH_DAYS = 90;
+const REFRESH_DAYS = 10;
 const DEFAULT_SCHOLAR_ID = "MfkzUuQAAAAJ";
 const DEFAULT_OPENALEX_ID = "A5028700323";
 const TZ = "Asia/Riyadh";
 
 // ---------- Entry points ----------
 
-/** Daily trigger target: fetch on the first run, then only when the last fetch is 90+ days old. */
+/** Daily trigger target: fetch on the first run, then only when the last fetch is 10+ days old. */
 function refreshIfStale() {
   const last = PropertiesService.getScriptProperties().getProperty("LAST_API_FETCH");
   const ageDays = last ? (Date.now() - new Date(last + "T00:00:00").getTime()) / 86400000 : Infinity;

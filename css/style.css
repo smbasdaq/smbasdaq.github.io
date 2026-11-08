@@ -118,6 +118,16 @@ p { margin: 0; }
 .hero { padding-block: clamp(40px, 7vw, 88px) clamp(40px, 6vw, 72px); background: var(--surface); border-bottom: 1px solid var(--line); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(24px, 5vw, 64px); align-items: center; }
 .eyebrow { font-size: var(--step--1); letter-spacing: .12em; text-transform: uppercase; color: var(--saffron); font-weight: 600; }
+.cred-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 12px; padding: 6px 14px 6px 10px;
+  background: var(--teal-soft); color: var(--teal);
+  border: 1px solid color-mix(in srgb, var(--teal) 35%, transparent);
+  border-radius: 999px;
+  font-size: var(--step--1); font-weight: 500; line-height: 1.35;
+}
+.cred-badge svg { width: 18px; height: 18px; flex: none; }
+.cred-badge strong { font-weight: 700; letter-spacing: .04em; }
 .hero h1 { font-size: var(--step-4); margin-top: 10px; letter-spacing: -.01em; }
 .hero h1 .honorific { display: block; font-size: .45em; letter-spacing: .02em; color: var(--ink-soft); font-style: italic; margin-bottom: 4px; }
 .hero-roles { margin-top: 18px; display: grid; gap: 6px; color: var(--ink-soft); font-size: var(--step-1); max-width: 60ch; }

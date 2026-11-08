@@ -13,7 +13,7 @@ The site presents his career, research themes, about 350 publications, honours, 
 | | |
 |---|---|
 | **No-code content management** | Every word, date, link and paper comes from Google Sheets. Editing a cell and reloading the page updates the site, with no rebuild or redeploy. |
-| **Automated research metrics** | A time-driven Apps Script refreshes Google Scholar citations, h-index, i10-index, per-year citations and **per-paper citation counts** every 90 days, and keeps a history of past counts. |
+| **Automated research metrics** | A time-driven Apps Script refreshes Google Scholar citations, h-index, i10-index, per-year citations and **per-paper citation counts** every 10 days, and keeps a history of past counts. |
 | **New-paper discovery** | Papers newly found on Google Scholar or OpenAlex are added to the sheet automatically, with a suggested research theme, and flagged for review. |
 | **Live OpenAlex metrics** | Works count, citations and h-index are fetched from the OpenAlex API in the browser on every visit. |
 | **Research themes** | 12 thematic tiles, each opening a lightbox list of papers with verified DOI links. |
@@ -31,7 +31,7 @@ flowchart LR
     subgraph Google["Google Workspace"]
         P["Profile Sheet<br/>about, experience, education,<br/>honours, grants, patents, metrics"]
         U["Publications Sheet<br/>one tab per research theme"]
-        S["Apps Script<br/>(weekly trigger, 90-day rule)"]
+        S["Apps Script<br/>(weekly trigger, 10-day rule)"]
     end
     GS["Google Scholar<br/>(via SerpApi)"]
     OA["OpenAlex API"]
@@ -56,13 +56,13 @@ flowchart LR
 5. OpenAlex metrics are requested live and shown next to the Google Scholar figures stored in the sheet.
 
 ### How the metrics stay current
-The Apps Script runs once a week but calls the paid API only when **90 days** have passed since the last successful fetch, which is stored as a script property. A single run uses about 4 SerpApi searches. It then:
+The Apps Script runs once a week but calls the paid API only when **10 days** have passed since the last successful fetch, which is stored as a script property. A single run uses about 4 SerpApi searches. It then:
 - updates the overall citation metrics and the citations-per-year series;
 - matches every Scholar entry to its row in the Publications sheet by normalised title and updates that row's citation count. Per-theme totals on the site are calculated from these per-paper counts;
 - appends each new count to a **Citation History** tab;
 - queries OpenAlex and Scholar for works newer than the last fetch, skips supplements and non-research items, guesses a theme from keyword rules, and appends the paper highlighted for manual review.
 
-The fetch date is saved only after a successful run, so a failed run is retried at the next weekly check.
+The fetch date is saved only after a successful run, so a failed run is retried at the next daily check.
 
 ---
 
