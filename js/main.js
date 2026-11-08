@@ -103,7 +103,27 @@
     strip.parentElement.querySelector(".metric-foot")?.remove();
     if (asOf) strip.insertAdjacentHTML("afterend", `<p class="metric-foot">*${esc(asOf)}</p>`);
   }
-
+    function renderTicker() {
+    const gs = (k) => DATA.P.Metrics.find((m) => m.Source === "Google Scholar" && m.Metric === k && m.Value !== "");
+    const cit = gs("Citations"), h = gs("h-index"), i10 = gs("i10-index");
+    const years = (DATA.P["Citations by Year"] || []).filter((r) => /^\d{4}$/.test(r.Year) && r.Citations !== "").sort((a, b) => b.Year - a.Year);
+    const latest = DATA.pubs.filter((p) => p.year).sort((a, b) => b.year - a.year)[0];
+    const items = [];
+    if (cit) items.push(`<a href="#analytics">Citations <b>${fmt(cit.Value)}</b></a>`);
+    if (h) items.push(`<a href="#analytics">h-index <b>${esc(h.Value)}</b></a>`);
+    if (i10) items.push(`<a href="#analytics">i10-index <b>${esc(i10.Value)}</b></a>`);
+    if (years[0]) items.push(`<a href="#analytics">Citations in ${esc(years[0].Year)} <b>${fmt(years[0].Citations)}</b></a>`);
+    items.push(`<a href="#publications">Publications <b>${fmt(DATA.pubs.length)}</b></a>`);
+    if (latest) {
+      const title = esc(latest.title.length > 90 ? latest.title.slice(0, 90) + "…" : latest.title);
+      const link = latest.doi ? `href="https://doi.org/${esc(latest.doi)}" target="_blank" rel="noopener"` : `href="#publications"`;
+      items.push(`<a ${link}>Latest paper <b>${title}</b> (${latest.year})</a>`);
+    }
+    if (cit) items.push(`<span class="ticker-src">Source: Google Scholar${cit["As of"] ? ", updated " + esc(cit["As of"]) : ""}</span>`);
+    const row = items.map((t) => `<span>${t}</span>`).join("");
+    $("#ticker-move").innerHTML = `<div class="ticker-group">${row}</div><div class="ticker-group" aria-hidden="true" inert>${row}</div>`;
+    $("#ticker").hidden = false;
+  }
   function renderAbout() {
     $("#about-text").innerHTML = DATA.P["Executive Profile"].map((r) => `<p>${esc(r.Paragraph)}</p>`).join("");
     const edu = DATA.P.Education.find((e) => /ph\.?d/i.test(e.Degree));
@@ -391,7 +411,7 @@
   SiteData.loadAll().then((d) => {
     DATA = d;
     d.themes.forEach((t) => { themeByCode[t.Code] = t; });
-    renderHero(); renderAbout(); renderEducation(); renderExperience();
+    renderHero(); renderTicker(); renderAbout(); renderEducation(); renderExperience();
     renderLeadership(); renderTiles(); initPubFilters(); drawPubs(); renderActivities();
     renderMetricSources(); renderCharts(); renderContact(); fetchLiveMetrics();
   }).catch((err) => {
